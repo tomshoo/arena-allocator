@@ -1,0 +1,19 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "--std=c2x",
+      "-O3",
+      "-Wall",
+      "-Wextra",
+      "-I./includes/",
+      "-c",
+      "-o",
+      "build/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/tomshoo/Projects/arena",
+    "file": "/home/tomshoo/Projects/arena/src/main.c",
+    "output": "/home/tomshoo/Projects/arena/build/main.o"
+  }
+]
