@@ -1,13 +1,13 @@
-CC            := clang
-CCFLAGS       := --std=c2x -O3 -Wall -Wextra
-INCLUDE_DIRS  := ./includes/
-INCLUDE_FLAGS := $(foreach D,$(INCLUDE_DIRS), -I$(D))
-OBJDIR        := build
-SRCDIR        := src
-BIN           := $(OBJDIR)/main
+CC           := clang
+CCFLAGS      := --std=c2x -O3 -Wall -Wextra
+INCLUDE_DIRS := ./includes/
+OBJDIR       := build
+SRCDIR       := src
+BIN          := $(OBJDIR)/main
 
-OBJS    ?= $(patsubst src/%.c, $(OBJDIR)/%.o, $(wildcard $(SRCDIR)/*.c))
-DEPENDS ?= $(patsubst src/%.c, $(OBJDIR)/%.d, $(wildcard $(SRCDIR)/*.c))
+INCLUDE_FLAGS ?= $(foreach D,$(INCLUDE_DIRS), -I$(D))
+OBJS          ?= $(patsubst src/%.c, $(OBJDIR)/%.o, $(wildcard $(SRCDIR)/*.c))
+DEPENDS       ?= $(patsubst src/%.c, $(OBJDIR)/%.d, $(wildcard $(SRCDIR)/*.c))
 
 .PHONY: clean all
 
